@@ -19,7 +19,6 @@ def save_ip():
 @app.route('/checkIP', methods=['GET'])
 def check_ip():
     ip = request.args.get('IP')
-    # Abre o arquivo de IPs e verifica se o IP já existe na lista
     with open("ips.txt", "r") as ips_file:
         if ip in ips_file.read().splitlines():
             response = "IP already exists"
